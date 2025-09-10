@@ -4,3 +4,4 @@
 4)Longest Palindrome substring: s = "babad" Output: "bab" | s = "abbac" output: abba Technique: Expand around center, a) for odd palindromes start left and right with 1, 
 and for even palindromes (cbba) try left with 1 and right with left+1. For any given string try both odd and even, as possible to have even palindrome in odd string.
 5)CloneGraph, input: Node output: Deep ClonedNode. Technique uses a hashmap to stores node and its neighbors, when filling in the neighbors use DFS(Depth First Search) recursively calling method and fulfill the neighbors
+6)Palindromic Substrings -> Input: abc Output: 3 Explanation: Three palindromic strings: "a", "b", "c". Technique: Expand around center, a) for odd palindromes start left and right with 1, 
