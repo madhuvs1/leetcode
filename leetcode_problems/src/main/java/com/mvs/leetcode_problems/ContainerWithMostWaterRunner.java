@@ -1,15 +1,12 @@
 package com.mvs.leetcode_problems;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /*
 Example
 		Input: height = [1,8,6,2,5,4,8,3,7]
 		max water it contain -> from 8 to 7, now to calculate area -> difference of indices*Height -> (8-1) -> 7 * 7 = 49
 
-	formula, Math.abs(l-r) * Min(height[r],height[l])
+	formula: maxWaterContainerArea = containerWidth*containerHeight
+		Where containerWidth = (r-l) and containerHeight: Min(height[r],height[l])
  */
 
 class ContainerWithMostWater {

@@ -6,3 +6,4 @@ and for even palindromes (cbba) try left with 1 and right with left+1. For any g
 5)CloneGraph, input: Node output: Deep ClonedNode. Technique uses a hashmap to stores node and its neighbors, when filling in the neighbors use DFS(Depth First Search) recursively calling method and fulfill the neighbors
 6)Palindromic Substrings -> Input: abc Output: 3 Explanation: Three palindromic strings: "a", "b", "c". Technique: Expand around center, a) for odd palindromes start left and right with 1, 
 7)Container with Most water -> Input: height = [1,8,6,2,5,4,8,3,7] formula: width(l-r)*containerHeight(min(height[l],height[r])) Technique: 2 pointer technique, while l is shorter move forward l++, otherwise move r inward r--
+8)WordBreak->Input s = "leetcode", wordDict = ["leet","code"] output: true, Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"] Output: false Technique: Use BFS, Queue, Checkpoint, Checkpoint indices more details in the class file
