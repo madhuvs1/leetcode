@@ -47,7 +47,7 @@ class ThreeSum { // [-4, -1, -1, 0, 1, 2]
 			if (i > 0 && nums[i] == nums[i - 1]) // to avoid duplicates, in a sorted array duplicates show up next to each other
 				continue;
 			int leftPointer = i + 1;
-			int rightPointer = nums.length - 1;
+			int rightPointer = nums.length - 1;  //note here though outer loop is length-2, rightPointer always starts from the end
 
 			while (leftPointer < rightPointer) {
 				var result = nums[i] + nums[leftPointer] + nums[rightPointer];
