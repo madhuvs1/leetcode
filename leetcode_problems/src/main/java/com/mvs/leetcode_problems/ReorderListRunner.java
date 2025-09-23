@@ -1,5 +1,10 @@
 package com.mvs.leetcode_problems;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+import com.mvs.leetcode_problems.RemoveNodeFromEndOfList.ListNode;
+
 /*
 	You are given the head of a singly linked-list. The list can be represented as:
 	L0 → L1 → … → Ln - 1 → Ln Reorder the list to be on the following form: L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
@@ -11,6 +16,11 @@ package com.mvs.leetcode_problems;
     Find MiddleNode
     1,2,3,4,5 -> (1,1) -> (2,3) -> (3,5) -> (4,7-NULL) MiddleNode is 3
     1,2,3,4,5,6 -> (1,1) -> (2,3) -> (3,5) -> (4,7-NULL) MiddleNode is 3   
+    
+    Technique: 
+    Split the LinkedList by half by slow and fast pointer,
+    Reverse the second half
+    Merge First and Second Half
     
  * */
 
@@ -66,6 +76,29 @@ class ReorderList {
 }
 
 public class ReorderListRunner {
+	public static int[] listNodeToArray(ReorderList.ListNode head) {
+	    // First, find length
+	    int length = 0;
+	    ReorderList.ListNode curr = head;
+	    while (curr != null) {
+	        length++;
+	        curr = curr.next;
+	    }
+
+	    // Fill array
+	    int[] arr = new int[length];
+	    curr = head;
+	    for (int i = 0; i < length; i++) {
+	        arr[i] = curr.val;
+	        curr = curr.next;
+	    }
+	    return arr;
+	}
+	
+	public static String getStringFromArray(int[] array) {
+		return Arrays.stream(array).mapToObj(String::valueOf).collect(Collectors.joining(","));
+	}
+	
 	public static void main(String[] args) {
 		int[] nodes = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		ReorderList.ListNode linkedList = new ReorderList.ListNode(nodes[0]);
@@ -77,6 +110,8 @@ public class ReorderListRunner {
 		}
 		ReorderList  reorderList = new ReorderList();
 		reorderList.reorderList(linkedList);
-		System.out.println(linkedList);
+		var reorderedListArray = listNodeToArray(linkedList);
+		System.out.printf("Reorder of nodes(from order L1,L2...Ln to L1,Ln,L2,Ln-1,L3,Ln-2....) array:%s is %s %n ", getStringFromArray(nodes), getStringFromArray(reorderedListArray));
+		
 	}
 }
