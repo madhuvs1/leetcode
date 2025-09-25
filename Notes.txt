@@ -17,3 +17,5 @@ Technique: Split the LinkedList by half by slow and fast pointer, Reverse the se
 13)RemoveNthNodeFromEnd: Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5] Input: head = [1], n = 1 Output: []
 Technique: Use Anchor Node(dummy) point its next to head, use 2 pointer, Fast Pointer and slowPointer are pointed to dummyNode, FastPointers moves forward to N+1 steps 
 Next move fast and slow pointer by 1 step until fastPointer is not null. At this stage, SlowPointer.next is the node to be removed, slowPointer.next = slowPointer.next.next and return dummyNode.next;
+14)ValidParenthesis: Input: s = "()" Output: true Input: s= "){" Output: false Input: ()[]{} output: false Input: ()[]{}  Output: false
+Technique: Create Map of pair of parenthesis, use a Stack to add each parenthesis, if you encounter a closing parenthesis in the array and the stack peed doesn't have its pair then its invalid.
