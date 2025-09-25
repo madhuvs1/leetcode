@@ -19,3 +19,5 @@ Technique: Use Anchor Node(dummy) point its next to head, use 2 pointer, Fast Po
 Next move fast and slow pointer by 1 step until fastPointer is not null. At this stage, SlowPointer.next is the node to be removed, slowPointer.next = slowPointer.next.next and return dummyNode.next;
 14)ValidParenthesis: Input: s = "()" Output: true Input: s= "){" Output: false Input: ()[]{} output: false Input: ()[]{}  Output: false
 Technique: Create Map of pair of parenthesis, use a Stack to add each parenthesis, if you encounter a closing parenthesis in the array and the stack peed doesn't have its pair then its invalid.
+15)MergeSortedList: Input: list1 = [1,2,4], list2 = [1,3,4] Output: [1,1,2,3,4,4] Input: list1 = [], list2 = []  Output: [] Input: list1 = [], list2 = [0] Output: [0]
+Technique: Use 2 fingers one on each list, both fingers point at the first node, when they are equal remove one of them from original list, if they are not equal take the lesser value and remove from the list and continue until the node is empty.
